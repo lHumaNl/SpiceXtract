@@ -28,7 +28,7 @@ jobs:
 
       - name: Check if version exists on PyPI
         run: |
-          RESPONSE=$(curl -s https://pypi.org/pypi/echowarp/json)
+          RESPONSE=$(curl -s https://pypi.org/pypi/spicextract/json)
           EXISTS=$(echo $RESPONSE | jq --arg VERSION "$VERSION" '.releases | has($VERSION)')
           if [[ "$EXISTS" == "true" ]]; then
             echo "Version $VERSION already exists on PyPI, stopping job."
